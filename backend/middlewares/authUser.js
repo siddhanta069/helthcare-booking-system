@@ -7,7 +7,7 @@ const authUser = async (req, res, next) => {
     if (!token) {
       return res.json({
         success: false,
-        message: "Not Authorized Login Again",
+        message: "Not Authorized, Login Again",
       });
     }
     const token_decode = jwt.verify(token, process.env.JWT_SECRET);
