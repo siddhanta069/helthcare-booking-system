@@ -4,6 +4,7 @@ import group_profiles from './group_profiles.png'
 import profile_pic from './profile_pic.png'
 import contact_image from './contact_image.png'
 import about_image from './about_image.png'
+import logooo from './logooo.png'
 import logo from './logo.svg'
 import dropdown_icon from './dropdown_icon.svg'
 import menu_icon from './menu_icon.svg'
@@ -42,6 +43,7 @@ export const assets = {
     appointment_img,
     header_img,
     group_profiles,
+    logooo,
     logo,
     chats_icon,
     verified_icon,
