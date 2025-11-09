@@ -17,6 +17,19 @@ connectCloudinary();
 app.use(express.json());
 app.use(cors());
 
+const allowedOrigins = [
+    'https://book-stm-client.netlify.app/',
+    'https://book-stm-admin.netlify.app/'
+
+];
+
+const corsOptions = {
+    origin: allowedOrigins,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 // api endpoints
 app.use("/api/admin", adminRouter);
 app.use("/api/doctor", doctorRouter);
