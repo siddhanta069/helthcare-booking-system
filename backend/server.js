@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(cors());
 
 const allowedOrigins = [
-    'https://book-stm-client.netlify.app/',
-    'https://book-stm-admin.netlify.app/'
+    'https://booking-system-client.onrender.com',
+    'https://booking-system-admin.onrender.com'
 
 ];
 
