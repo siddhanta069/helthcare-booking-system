@@ -15,19 +15,32 @@ connectCloudinary();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
 
+// Define allowed origins
 const allowedOrigins = [
     'https://booking-system-client.onrender.com',
     'https://booking-system-admin.onrender.com'
-
 ];
 
+// Configure CORS
 const corsOptions = {
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true); 
+        
+        // Allow if the origin is in the allowed list
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            // Log the blocked origin for debugging
+            console.log(`CORS block: Origin ${origin} not allowed.`);
+            callback(new Error('Not allowed by CORS'), false);
+        }
+    },
     optionsSuccessStatus: 200
 };
 
+// Apply the specific CORS configuration
 app.use(cors(corsOptions));
 
 // api endpoints
