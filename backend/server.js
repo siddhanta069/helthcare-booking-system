@@ -18,8 +18,8 @@ app.use(express.json());
 
 // Define allowed origins
 const allowedOrigins = [
-    'https://booking-system-client.onrender.com',
-    'https://booking-system-admin.onrender.com'
+    'https://clientside-booking-system.onrender.com',
+    'https://admin-booking-system-v7h2.onrender.com'
 ];
 
 // Configure CORS
